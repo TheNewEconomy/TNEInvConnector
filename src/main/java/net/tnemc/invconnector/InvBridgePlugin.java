@@ -1,6 +1,6 @@
 package main.java.net.tnemc.invconnector;
 /*
- * The New Kings
+ * The New Economy
  * Copyright (C) 2022 - 2023 Daniel "creatorfromhell" Vidmar
  *
  * This program is free software: you can redistribute it and/or modify
