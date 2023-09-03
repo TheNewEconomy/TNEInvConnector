@@ -1,0 +1,16 @@
+#General Data
+name: TNEInvConnector
+version: 0.1.2.0
+description: A bridge plugin between TNE and open inv style plugins.
+author: creatorfromhell
+api-version: 1.13
+
+#Plugin Data
+main: net.tnemc.invconnector.InvBridgePlugin
+
+depend:
+  - TheNewEconomy
+
+softdepend:
+  - InvSeePlusPlus
+  - OpenInv
