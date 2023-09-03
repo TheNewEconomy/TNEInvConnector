@@ -17,6 +17,7 @@ package main.java.net.tnemc.invconnector;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import main.java.net.tnemc.invconnector.invsee.InvSeeInventorySaveListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -33,7 +34,7 @@ public class InvBridgePlugin extends JavaPlugin {
   public void onEnable() {
 
     if(Bukkit.getPluginManager().isPluginEnabled("InvSeePlusPlus")) {
-
+      Bukkit.getPluginManager().registerEvents(new InvSeeInventorySaveListener(), this);
     }
 
     if(Bukkit.getPluginManager().isPluginEnabled("OpenInv")) {
