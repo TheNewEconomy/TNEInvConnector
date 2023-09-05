@@ -26,7 +26,6 @@ import net.tnemc.core.account.holdings.HoldingsEntry;
 import net.tnemc.core.currency.Currency;
 import net.tnemc.core.currency.calculations.CalculationData;
 import net.tnemc.core.currency.item.ItemCurrency;
-import net.tnemc.core.utils.Identifier;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -41,8 +40,10 @@ import java.util.Optional;
  */
 public class InvSeeInventorySaveListener implements Listener {
 
-  @EventHandler(priority = EventPriority.HIGH)
+  @EventHandler(priority = EventPriority.MONITOR)
   public void onSave(final SpectatorInventorySaveEvent event) {
+
+    if(event.isCancelled()) return;
 
     final Optional<PlayerAccount> account = TNECore.api().getPlayerAccount(event.getInventory().getSpectatedPlayerId());
     if(account.isPresent()) {

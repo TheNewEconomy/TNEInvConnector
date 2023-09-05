@@ -34,7 +34,12 @@ public class InvBridgePlugin extends JavaPlugin {
   public void onEnable() {
 
     if(Bukkit.getPluginManager().isPluginEnabled("InvSeePlusPlus")) {
-      Bukkit.getPluginManager().registerEvents(new InvSeeInventorySaveListener(), this);
+      try {
+        Class.forName("com.janboerman.invsee.spigot.api.event.SpectatorInventorySaveEvent");
+        Bukkit.getPluginManager().registerEvents(new InvSeeInventorySaveListener(), this);
+      } catch(Exception ignore) {
+        getLogger().warning("Invalid InvSeePlusPlus Version. Please update this to use the TNE Bridge Plugin!");
+      }
     }
 
     if(Bukkit.getPluginManager().isPluginEnabled("OpenInv")) {
